@@ -172,6 +172,27 @@
         // Scale to percentage, so it can be used for a progress bar
         complexity = (complexity / MAX_COMPLEXITY) * 100;
         complexity = (complexity > 100) ? 100 : complexity;
+        complexity = Math.round(complexity);
+        if(complexity >= 0 && complexity <= 20)
+        {
+        	complexity = 'lame.png';
+        }
+        if(complexity >= 21 && complexity <= 40)
+        {
+        	complexity = 'ok.png';
+        }
+        if(complexity >= 41 && complexity <= 60)
+        {
+        	complexity = 'good.png';
+        }
+        if(complexity >= 61 && complexity <= 80)
+        {
+        	complexity = 'rad.png';
+        }
+        if(complexity >= 81 && complexity <= 100)
+        {
+        	complexity = 'insane.png';
+        }
         
         callback.call(this, valid, complexity);
       }
